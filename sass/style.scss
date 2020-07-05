@@ -1,0 +1,9 @@
+
+@import '_mod/_mod';
+$type:sp;
+@import '_page/_sppc';
+
+$type:pc;
+@media screen and (min-width:768px){
+  @import '_page/_sppc';
+}

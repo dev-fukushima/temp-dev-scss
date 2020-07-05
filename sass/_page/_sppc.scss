@@ -1,0 +1,23 @@
+body{
+  text-align: center;
+}
+.wrap{
+  max-width: 750px;
+  margin: 0 auto;
+  background: #ccc;
+}
+.box{
+  width :v(500);
+  height:v(300);
+  background: #f00;
+  position: relative;
+}
+.item{
+  width: v(40);
+  height: v(40);
+  position: absolute;
+  top:v(150);
+  left:calc(50% - #{v(25)});
+  display: block;
+  background: #0F0;
+}
