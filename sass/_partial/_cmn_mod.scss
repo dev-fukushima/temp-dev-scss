@@ -1,0 +1,190 @@
+
+/* ==========================================================
+!モジュール
+========================================================== */
+.sp-visible{
+    display: inherit;
+  }
+  .pc-visible{
+    display: none;
+  }
+  .sp-block-visible{
+    display: block;
+  }
+  .tab-br-visible{
+    display: none;
+  }
+  .sp-br-visible{
+    display: inline;
+  }
+  .pc-br-visible{
+    display: none;
+  }
+  @media screen and (min-width: 641px) {
+  .sp-block-visible{
+      display: none;
+  }
+  .sp-visible{
+    display: none;
+  }
+  .pc-visible{
+    display: inherit;
+  }
+  .sp-br-visible{
+  display: none;
+  }
+  .pc-br-visible{
+  display: inline;
+  }
+  .tab-br-visible{
+    display: none;
+  }
+  }
+  @media screen and (min-width:641px) and (max-width:900px){
+    .tab-br-visible{
+      display: inline;
+    }
+    .tab-br-hidden{
+      display: none;
+    }
+  }
+
+  @include mq-u{
+    @for $j from 10 through 100 {
+      .m-pcmaxw#{$j}{
+        max-width: $j#{"%"}!important;
+      }
+    }
+    }
+    @include mq-d{
+      @for $j from 10 through 100 {
+        .m-spmaxw#{$j}{
+          max-width: $j#{"%"}!important;
+        }
+      }
+      @for $k from 100 through 500 {
+        .m-spw#{$k}{
+          width: v($k)!important;
+        }
+    
+      }
+    }
+    @include mq-u{
+      @for $k from 100 through 500 {
+        .m-pcw#{$k}{
+          width: $k+px!important;
+        }
+      }
+    }
+    @include mq-d{
+    @for $i from 1 through 10 {
+      .m-spmb#{$i}0{
+        margin-bottom: v($i*10)!important;
+      }
+      .m-spmt#{$i}0{
+        margin-top: v($i*10)!important;
+      }
+      .m-spml#{$i}0{
+        margin-left: v($i*10)!important;
+      }
+      .m-spmr#{$i}0{
+        margin-right: v($i*10)!important;
+      }
+      .m-sppb#{$i}0{
+        padding-bottom: v($i*10)!important;
+      }
+      .m-sppt#{$i}0{
+        padding-top: v($i*10)!important;
+      }
+      .m-sppl#{$i}0{
+        padding-left: v($i*10)!important;
+      }
+      .m-sppr#{$i}0{
+        padding-right: v($i*10)!important;
+      }
+      }
+    }
+    @include mq-u{
+    @for $i from 1 through 20 {
+      .m-pcmb#{$i}0{
+        margin-bottom: ($i*10)+px!important;
+      }
+      .m-pcmt#{$i}0{
+        margin-top: ($i*10)+px!important;
+      }
+      .m-pcml#{$i}0{
+        margin-left: ($i*10)+px!important;
+      }
+      .m-pcmr#{$i}0{
+        margin-right: ($i*10)+px!important;
+      }
+      .m-pcpb#{$i}0{
+        padding-bottom: ($i*10)+px!important;
+      }
+      .m-pcpt#{$i}0{
+        padding-top: ($i*10)+px!important;
+      }
+      .m-pcpl#{$i}0{
+        padding-left: ($i*10)+px!important;
+      }
+      .m-pcpr#{$i}0{
+        padding-right: ($i*10)+px!important;
+      }
+    }
+    }
+    .m{
+      &-tal{
+        text-align: left;
+      }
+      &-tac{
+        text-align: center;
+      }
+      &-tar{
+        text-align: right;
+      }
+    }
+    .m{
+        &-mlrauto{
+          margin-left: auto;
+          margin-right: auto;
+        }
+        @include mq-u{
+        &-pc-mlrauto{
+          margin-left: auto;
+          margin-right: auto;
+        }
+        &-pc-mlauto{
+          margin-left: auto;
+        }
+        &-pc-mrauto{
+          margin-right: auto;
+        }
+        }
+        @include mq-d{
+        &-sp-mlrauto{
+          margin-left: auto;
+          margin-right: auto;
+        }
+        &-sp-mlauto{
+          margin-left: auto;
+        }
+        &-sp-mrauto{
+          margin-right: auto;
+        }
+        }
+    }
+
+    .m{
+      &-flex {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap
+      }
+    }
+    .m{
+      &-block{
+        display: block!important;
+      }
+    }

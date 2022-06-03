@@ -1,0 +1,106 @@
+// ! 20220425
+// todo:▼今あるmixinの使い方
+// * @include t(PCfontsize,PClineheight,PCletterspacing,CPfontweight);
+// * @include ts(SPfontsize,SPlineheight,SPletterspacing,SPfontweight);
+// * @include tt(SPfontsize,SPlineheight,SPletterspacing,SPfontweight,PCfontsize,PClineheight,PCletterspacing,CPfontweight);
+// * すべて数値
+// !PCのフォントサイズ指定
+@mixin t($size: 14, $lh: 24, $ls: 0, $b: 400) {
+  // フォントサイズ
+  font-size: (floor-decimal($size, 1)) + px;
+  // 文字間
+  letter-spacing: ($ls * 0.001) + em;
+  // 行の高さ
+  @if $lh == 0 {
+  } @else if $lh == 1 {
+    line-height: 1;
+  } @else if $lh == 1.1 {
+    line-height: 1.1;
+  } @else if $lh == 1.2 {
+    line-height: 1.2;
+  } @else if $lh == 1.3 {
+    line-height: 1.3;
+  } @else if $lh == 1.4 {
+    line-height: 1.4;
+  } @else if $lh == 1.5 {
+    line-height: 1.5;
+  } @else if $lh == 1.6 {
+    line-height: 1.6;
+  } @else if $lh == 1.7 {
+    line-height: 1.7;
+  } @else if $lh == 1.8 {
+    line-height: 1.8;
+  } @else if $lh == 1.9 {
+    line-height: 1.9;
+  } @else {
+    line-height: floor-decimal($lh/$size, 1);
+  }
+  // 文字の太さ
+  @if $b == bold {
+    font-weight: 600;
+  } @else if $b == normal {
+    font-weight: 400;
+  } @else {
+    font-weight: $b;
+  }
+}
+// !スマホのフォントサイズ指定
+@mixin ts($size: 24, $lh: 32, $ls: 60, $b: 400) {
+  // フォントサイズ
+  $tmp_size: (floor-decimal($size / ($breakpoint/100), 5));
+  font-size: $tmp_size + vw;
+  // 文字間
+  letter-spacing: (($ls * 0.5) * 0.001) + em;
+  // 行の高さ
+  @if $lh == 0 {
+  } @else if $lh == 1 {
+    line-height: 1;
+  } @else if $lh == 1.1 {
+    line-height: 1.1;
+  } @else if $lh == 1.2 {
+    line-height: 1.2;
+  } @else if $lh == 1.3 {
+    line-height: 1.3;
+  } @else if $lh == 1.4 {
+    line-height: 1.4;
+  } @else if $lh == 1.5 {
+    line-height: 1.5;
+  } @else if $lh == 1.6 {
+    line-height: 1.6;
+  } @else if $lh == 1.7 {
+    line-height: 1.7;
+  } @else if $lh == 1.8 {
+    line-height: 1.8;
+  } @else if $lh == 1.9 {
+    line-height: 1.9;
+  } @else {
+    line-height: floor-decimal($lh/$size, 1);
+  }
+  // 文字の太さ
+  @if $b == bold {
+    font-weight: 600;
+  } @else if $b == normal {
+    font-weight: 400;
+  } @else {
+    font-weight: $b;
+  }
+}
+// !PCとスマホのフォントサイズ一括指定
+@mixin tt($size: 14, $lh: 24, $ls: 0, $b: 400, $size2: "", $lh2: "", $ls2: "", $b2: "") {
+  @include ts($size, $lh, $ls, $b);
+  @include mq-u {
+    @if $size2!= "" {
+      $size: $size2;
+    }
+    @if $lh2!= "" {
+      $lh: $lh2;
+    }
+    @if $ls2!= "" {
+      $ls: $ls2;
+    }
+    @if $b2!= "" {
+      $b: $b2;
+    }
+    @include t($size, $lh, $ls, $b);
+  }
+}

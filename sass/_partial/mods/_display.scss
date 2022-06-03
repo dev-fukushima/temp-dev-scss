@@ -1,0 +1,32 @@
+// ! 20220425
+// todo:▼今あるmixinの使い方
+// * @include gap(sp, pc);
+// * @include dn(sp, pc);
+
+@mixin dn($val: none, $val2: "") {
+  display: $val;
+  @include mq-u {
+    @if $val2!= "" {
+      $val: $val2;
+      display: $val;
+    }
+  }
+}
+
+@mixin gap($val: "", $val2: "", $val3: "", $val4: "") {
+  @if $val3!= "" {
+    gap: v($val) v($val3);
+  } @else {
+    gap: v($val);
+  }
+  @include mq-u {
+    @if $val4!= "" {
+      $val: $val3;
+      $val2: $val4;
+      gap: $val + px $val2 + px;
+    } @else if $val2!= "" {
+      $val: $val2;
+      gap: $val + px;
+    }
+  }
+}

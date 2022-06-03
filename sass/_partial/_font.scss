@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap");
+@import url(https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp.min.css);
+  .f {
+    &-sans {
+      font-family: "Noto Sans JP", sans-serif;
+    }
+    &-hira{
+      font-family:YakuHanJP ,"Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Hiragino Sans", "ヒラギノ角ゴシック","Noto Sans JP",メイリオ,sans-serif;
+    }
+    &-yu{
+      font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro", "メイリオ", sans-serif;
+    }
+  }
+.cmn-ff-min{
+    font-family: 'Noto Serif JP','sans-serif';
+}
+.cmn-ff-go{
+    font-family: toppan-bunkyu-gothic-pr6n,"Noto Sans JP","ヒラギノ角ゴ Pro W3", "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "メイリオ",sans-serif;
+    transition: opacity .1s ease .2s;
+    opacity: 0;
+}
+.cmn-ff-bgo{
+    font-family: toppan-bunkyu-gothic-pr6n, serif;
+    transition: opacity .1s ease .2s;
+    opacity: 0;
+}
+html{
+    &.wf-active{
+        .cmn-ff-bgo{
+            opacity: 1;
+        }
+        .cmn-ff-go{
+            opacity: 1;
+        }
+    }
+}
+.cmn-fs-i{
+    font-style: italic;
+}
+.cmn-ff-en{
+    font-family: 'lato', cursive;
+}

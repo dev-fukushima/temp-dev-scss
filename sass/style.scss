@@ -1,9 +1,13 @@
 
-@import '_mod/_mod';
+@import '_partial/_config';
+@import '_partial/_font';
+@import '_partial/_reset';
+@import '_partial/_var';
+@import '_partial/_cmn_mod';
+//@import '_partial/_animation';使用する場合
+
+@import '_partial/mods/mods';
+
 $type:sp;
 @import '_page/_sppc';
 
-$type:pc;
-@media screen and (min-width:768px){
-  @import '_page/_sppc';
-}

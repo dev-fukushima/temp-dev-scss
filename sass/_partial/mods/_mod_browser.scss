@@ -1,0 +1,23 @@
+@mixin IE11 {
+  @media all and (-ms-high-contrast: none) {
+    @content;
+  }
+}
+
+@mixin firefox {
+  @-moz-document url-prefix() {
+    @content;
+  }
+}
+
+@mixin chrome {
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    @content;
+  }
+}
+
+@mixin safari {
+  _::-webkit-full-page-media, _:future, :root span {
+    @content;
+  }
+}

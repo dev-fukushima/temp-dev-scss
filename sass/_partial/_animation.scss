@@ -1,0 +1,426 @@
+
+.js-fadein{
+  opacity: 0;
+}
+.js-fadeup{
+  transform:translateY(40px);
+  opacity: 0;
+}
+.js-faderight{
+  transform:translateX(40px);
+  opacity: 0;
+}
+.js-fadeleft{
+  transform:translateX(-40px);
+  opacity: 0;
+}
+.js-scaledown{
+  transform:scale(2.2);
+  opacity: 0;
+  transition: all 1.0s ease;
+}
+.js-popup{
+  opacity: 0;
+  transition: opacity .4s ease;
+  transition-duration:1.4s;
+}
+
+.js-flash{
+  opacity: 0;
+}
+
+.js-star{
+  opacity: 0;
+  &.js-active{
+    animation-name: star;
+    animation-iteration-count: 1;
+    animation-duration: .4s;
+    animation-timing-function: ease;  
+  }
+}
+.js-star01{
+  animation-delay:.1s ;
+}
+.js-star02{
+  animation-delay:.2s ;
+}
+.js-star03{
+  animation-delay:.3s ;
+}
+.js-star04{
+  animation-delay:.4s ;
+}
+.js-star05{
+  animation-delay:.5s ;
+}
+.js-star06{
+  animation-delay:.6s ;
+}
+.js-star07{
+  animation-delay:.7s ;
+}
+.js-star08{
+  animation-delay:.8s ;
+}
+.js-delay-01{
+  transition-delay: .1s!important;
+  &::after{
+    transition-delay: .1s!important;
+  }
+}
+.js-delay-02{
+  transition-delay: .2s!important;
+  &::after{
+    transition-delay: .2s!important;
+  }
+}
+.js-delay-03{
+  transition-delay: .3s!important;
+  &::after{
+    transition-delay: .3s!important;
+  }
+}
+.js-delay-04{
+  transition-delay: .4s!important;
+  &::after{
+    transition-delay: .4s!important;
+  }
+}
+.js-delay-05{
+  transition-delay: .5s!important;
+  &::after{
+    transition-delay: .5s!important;
+  }
+}
+.js-delay-06{
+  transition-delay: .6s!important;
+  &::after{
+    transition-delay: .6s!important;
+  }
+}
+.js-delay-07{
+  transition-delay: .7s!important;
+  &::after{
+    transition-delay: .7s!important;
+  }
+}
+.js-delay-08{
+  transition-delay: .8s!important;
+  &::after{
+    transition-delay: .8s!important;
+  }
+}
+.js-delay-10{
+  transition-delay: 1.0s!important;
+  &::after{
+    transition-delay: 1.0s!important;
+  }
+}
+.js-delay-12{
+  transition-delay: 1.2s!important;
+  &::after{
+    transition-delay: 1.2s!important;
+  }
+}
+.js-delay-15{
+  transition-delay: 1.5s!important;
+  &::after{
+    transition-delay: 1.5s!important;
+  }
+}
+.js-delay-14{
+  transition-delay: 1.4s!important;
+  &::after{
+    transition-delay: 1.4s!important;
+  }
+}
+.js-delay-16{
+  transition-delay: 1.6s!important;
+  &::after{
+    transition-delay: 1.6s!important;
+  }
+}
+.js-delay-20{
+  transition-delay: 2.0s!important;
+  &::after{
+    transition-delay: 2.0s!important;
+  }
+}
+.js-delay-25{
+  transition-delay: 2.5s!important;
+  &::after{
+    transition-delay: 2.5s!important;
+  }
+}
+.js-scaleupY{
+  transform: scaleY(0);
+}
+.js-scaleup-orgin-bottom{
+  transform-origin: 0 100%;
+}
+/*
+.js-line{
+  position: relative;
+  &.is-absolute{
+    position: absolute;
+  }
+  &:before{
+    position: absolute;
+    left:-5px;
+    bottom: 2px;
+    content:"";
+    width: 105%;
+    display: block;
+    background: $yellow;
+    transform:scaleX(0);
+    transform-origin:top left;
+    transition: all .3s ease .8s;
+  }
+}
+*/
+.js-active{
+  &.js-fadein{
+    opacity: 1;
+    transition: all 1.2s ease .1s;
+  }
+  &.js-fadeup{
+    transform:translateY(0);
+    opacity: 1;
+    transition: all 1.2s ease .1s;
+  }
+  &.js-faderight{
+    transform:translateX(0);
+    opacity: 1;
+    transition: all 1.2s ease .1s;
+  }
+  &.js-fadeleft{
+    transform:translateX(0);
+    opacity: 1;
+    transition: all 1.2s ease .1s;
+  }
+  &.js-line{
+    &:before{
+      transform:scaleX(1.0);
+      transform-origin:top left;
+    }
+  }
+  &.js-popup{
+    opacity: 1;
+    animation-name: popup;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+  }
+  &.js-flash{
+    opacity: 1;
+    animation-name: flash;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+  }
+  &.js-scaledown{
+    transform:scale(1);
+    opacity: 1;
+  }
+  &.js-arr-v{
+    opacity: 1;
+    animation-name: arr-v;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+  }
+  &.js-float{
+    opacity: 1;
+    animation-name: float;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+  }
+  &.js-float2{
+    opacity: 1;
+    animation-name: float;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+  }
+  &.js-scaleupY{
+    transform: scaleY(1.0);
+    transition: all 1.2s ease .1s;
+  }
+}
+
+
+/*光るアニメーション*/
+@keyframes reflection {
+  0% {
+    transform:skewX(-20deg) translateX(-100%);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.8;
+  }
+
+  20% {
+    transform:skewX(-35deg) translateX(130%);
+    opacity: 0.1;
+  }
+
+  21% {
+    transform:skewX(-40deg) translateX(200%);
+    opacity: 0;
+  }
+
+  100% {
+    transform:skewX(-45deg) translateX(200%);
+    opacity: 0;
+  }
+}
+
+/*浮遊するアニメーション*/
+@keyframes float {
+  0% {
+    transform: translate(0, 0)
+  }
+  50% {
+    transform: translate(0, -5px)
+  }
+  100% {
+    transform: translate(0, 0)
+  }
+}
+/*浮遊するアニメーション*/
+@keyframes flash{0%,50%,to{opacity:1}25%,75%{opacity:0}}
+
+
+/*スケールアップするアニメーション*/
+@keyframes scaleup {
+  0% {
+    transform: scale(0);
+  }
+  30% {
+    opacity: .5;
+    transform: scale(.3,.3);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5, 1.5)
+  }
+}
+@media screen and (min-width: 769px) {
+  /*浮遊するアニメーション*/
+  @keyframes float {
+    0% {
+      transform: translate(0, 0)
+    }
+    50% {
+      transform: translate(0, -10px)
+    }
+    100% {
+      transform: translate(0, 0)
+    }
+  }
+}
+/*少し回転するアニメーション*/
+@keyframes rotate {
+  0% {
+    transform: rotate(5deg)
+  }
+  50% {
+    transform: rotate(-5deg)
+  }
+  100% {
+    transform: rotate(5deg)
+  }
+}
+
+
+/*左右に動くアニメーション*/
+@keyframes arr {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0)
+  }
+  50% {
+    opacity: 1;
+    transform: translate(50%, 0)
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 0)
+  }
+}
+
+/*上下に動くアニメーション*/
+@keyframes arr-v {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0)
+  }
+  80% {
+    opacity: 1;
+    transform: translate(0,50%)
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 0)
+  }
+}
+/*バネアニメーション*/
+@keyframes popup{
+  0%{
+    transform:scale(1);
+  }
+  14%{
+    transform:scale(1.3);
+  }
+  28%{
+    transform:scale(1);
+  }
+  42%{
+    transform:scale(1.3);
+  }
+  70%{
+    transform:scale(1);
+  }
+}
+@keyframes popup2{
+  0%{
+    transform:scale(1);
+  }
+  14%{
+    transform:scale(1.3);
+  }
+  28%{
+    transform:scale(1);
+  }
+  42%{
+    transform:scale(1.3);
+  }
+  70%{
+    transform:scale(1);
+  }
+}
+
+/*スケールアップするアニメーション*/
+@keyframes star {
+  0% {
+    opacity:1;
+    transform: scale(0);
+  }
+  30% {
+    opacity: .5;
+    transform: scale(.3,.3);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.5, 1.5)
+  }
+}
+
+.js-countup{
+  transition: opacity .8s ease .4s;
+  opacity: 0;
+  &.js-active{
+    opacity: 1;
+  }
+}

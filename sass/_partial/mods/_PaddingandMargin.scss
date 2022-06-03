@@ -1,0 +1,208 @@
+// ! 20220425
+// todo: ▼今あるmixinの使い方
+// * @include mmt(sp, pc);
+// * @include mmr(sp, pc);
+// * @include mmb(sp, pc);
+// * @include mml(sp, pc);
+// * @include mmlr(Lsp, Rsp, Lpc, Rpc);
+// * @include mmtb(Tsp, Bsp, Tpc, Bpc);
+// * @include mm(Tsp, Rsp, Bsp, Lsp, Tpc, Rpc, Bpc, Lpc);
+// * @include ppt(sp, pc);
+// * @include ppr(sp, pc);
+// * @include ppb(sp, pc);
+// * @include ppl(sp, pc);
+// * @include pplr(Lsp, Rsp, Lpc, Rpc);
+// * @include pptb(Tsp, Bsp, Tpc, Bpc);
+// * @include pp(Tsp, Rsp, Bsp, Lsp, Tpc, Rpc, Bpc, Lpc);
+
+// !margintop
+@mixin mmt($val: "", $val2: "") {
+  @if $val!=auto {
+    margin-top: v($val);
+  } @else {
+    margin-top: auto;
+  }
+  @include mq-u {
+    @if $val2!= "" {
+      $val: $val2;
+      @if $val2!=auto {
+        margin-top: $val + px;
+      } @else {
+        margin-top: auto;
+      }
+    }
+  }
+}
+
+// !marginright
+@mixin mmr($val: "", $val2: "") {
+  @if $val!=auto {
+    margin-right: v($val);
+  } @else {
+    margin-right: auto;
+  }
+  @include mq-u {
+    @if $val2!= "" {
+      $val: $val2;
+      @if $val2!=auto {
+        margin-right: $val + px;
+      } @else {
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+// !marginbottom
+@mixin mmb($val: "", $val2: "") {
+  @if $val!=auto {
+    margin-bottom: v($val);
+  } @else {
+    margin-bottom: auto;
+  }
+  @include mq-u {
+    @if $val2!= "" {
+      $val: $val2;
+      @if $val2!=auto {
+        margin-bottom: $val + px;
+      } @else {
+        margin-bottom: auto;
+      }
+    }
+  }
+}
+
+// !marginleft
+@mixin mml($val: "", $val2: "") {
+  @if $val != auto {
+    margin-left: v($val);
+  } @else {
+    margin-left: auto;
+  }
+  @include mq-u {
+    @if $val2!= "" {
+      $val: $val2;
+      @if $val2!=auto {
+        margin-left: $val + px;
+      } @else {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+// !margin top & bottom
+@mixin mmtb($val: "", $val2: "", $val3: "", $val4: "") {
+  @include mmt($val, $val3);
+  @include mmb($val2, $val4);
+}
+
+// !margin left & right
+@mixin mmlr($val: "", $val2: "", $val3: "", $val4: "") {
+  @include mml($val, $val3);
+  @include mmr($val2, $val4);
+}
+
+// !margin ALL
+@mixin mm($val: "", $val2: "", $val3: "", $val4: "", $val5: "", $val6: "", $val7: "", $val8: "") {
+  @include mmt($val, $val5);
+  @include mmr($val2, $val6);
+  @include mmb($val3, $val7);
+  @include mml($val4, $val8);
+}
+
+// !paddingtop
+@mixin ppt($val: "", $val2: "") {
+  @if $val!=auto {
+    padding-top: v($val);
+  } @else {
+    padding-top: auto;
+  }
+  @include mq-u {
+    @if $val2!= "" {
+      $val: $val2;
+      @if $val2!=auto {
+        padding-top: $val + px;
+      } @else {
+        padding-top: auto;
+      }
+    }
+  }
+}
+
+// !paddingright
+@mixin ppr($val: "", $val2: "") {
+  @if $val!=auto {
+    padding-right: v($val);
+  } @else {
+    padding-right: auto;
+  }
+  @include mq-u {
+    @if $val2!= "" {
+      $val: $val2;
+      @if $val2!=auto {
+        padding-right: $val + px;
+      } @else {
+        padding-right: auto;
+      }
+    }
+  }
+}
+
+// !paddingbottom
+@mixin ppb($val: "", $val2: "") {
+  @if $val!=auto {
+    padding-bottom: v($val);
+  } @else {
+    padding-bottom: auto;
+  }
+  @include mq-u {
+    @if $val2!= "" {
+      $val: $val2;
+      @if $val2!=auto {
+        padding-bottom: $val + px;
+      } @else {
+        padding-bottom: auto;
+      }
+    }
+  }
+}
+
+// !paddingleft
+@mixin ppl($val: "", $val2: "") {
+  @if $val!=auto {
+    padding-left: v($val);
+  } @else {
+    padding-left: auto;
+  }
+  @include mq-u {
+    @if $val2!= "" {
+      $val: $val2;
+      @if $val2!=auto {
+        padding-left: $val + px;
+      } @else {
+        padding-left: auto;
+      }
+    }
+  }
+}
+
+// !padding top & bottom
+@mixin pptb($val: "", $val2: "", $val3: "", $val4: "") {
+  @include ppt($val, $val3);
+  @include ppb($val2, $val4);
+}
+
+// !padding left & right
+@mixin pplr($val: "", $val2: "", $val3: "", $val4: "") {
+  @include ppl($val, $val3);
+  @include ppr($val2, $val4);
+}
+
+// !padding ALL
+@mixin pp($val: "", $val2: "", $val3: "", $val4: "", $val5: "", $val6: "", $val7: "", $val8: "") {
+  @include ppt($val, $val5);
+  @include ppr($val2, $val6);
+  @include ppb($val3, $val7);
+  @include ppl($val4, $val8);
+}

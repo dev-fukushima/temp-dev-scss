@@ -1,0 +1,11 @@
+// todo: moduleとして使う変数はここに記載。
+// todo: ブレイクポイントのみ各案件ごとに変更して
+// todo: ページごとの変数は[_config.scss]を使用してください。
+
+// !レスポンシブのブレイクポイント
+$breakpoint: 768;
+$breakpointmin: $breakpoint - 1;
+
+// !pxの追加が多かったのでpx付き変数追加
+$bp-px: $breakpoint + "px";
+$bpmin-px: $breakpointmin + "px";

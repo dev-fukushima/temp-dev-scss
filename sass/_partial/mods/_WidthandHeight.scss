@@ -1,0 +1,90 @@
+// ! 20220425
+// todo:▼今あるmixinの使い方
+// * @include ww(スマホサイズ, パソコンサイズ);
+// * @include wwmin(スマホサイズ, パソコンサイズ);
+// * @include wwmax(スマホサイズ, パソコンサイズ);
+// * @include hh(スマホサイズ, パソコンサイズ);
+// * @include hhmin(スマホサイズ, パソコンサイズ);
+// * @include hhmax(スマホサイズ, パソコンサイズ);
+
+// !幅指定
+@mixin ww($val: "", $val2: "") {
+  width: v($val);
+  @include mq-u {
+    @if $val2!= "" {
+      $val: $val2;
+    }
+    @if $val2!=auto {
+      width: $val + px;
+    } @else {
+      width: auto;
+    }
+  }
+}
+@mixin wwmin($val: "", $val2: "") {
+  min-width: v($val);
+  @include mq-u {
+    @if $val2!= "" {
+      $val: $val2;
+    }
+    @if $val2!=auto {
+      min-width: $val + px;
+    } @else {
+      min-width: auto;
+    }
+  }
+}
+@mixin wwmax($val: "", $val2: "") {
+  max-width: v($val);
+  @include mq-u {
+    @if $val2!= "" {
+      $val: $val2;
+    }
+    @if $val2!=auto {
+      max-width: $val + px;
+    } @else {
+      max-width: auto;
+    }
+  }
+}
+
+// !高さ指定
+@mixin hh($val: "", $val2: "") {
+  height: v($val);
+  @include mq-u {
+    @if $val2!= "" {
+      $val: $val2;
+    }
+    @if $val2!=auto {
+      height: $val + px;
+    } @else {
+      height: auto;
+    }
+  }
+}
+@mixin hhmin($val: "", $val2: "") {
+  min-height: v($val);
+  @include mq-u {
+    @if $val2!= "" {
+      $val: $val2;
+    }
+    @if $val2!=auto {
+      min-height: $val + px;
+    } @else {
+      min-height: auto;
+    }
+  }
+}
+@mixin hhmax($val: "", $val2: "") {
+  max-height: v($val);
+  @include mq-u {
+    @if $val2!= "" {
+      $val: $val2;
+    }
+    @if $val2!=auto {
+      max-height: $val + px;
+    } @else {
+      max-height: auto;
+    }
+  }
+}
